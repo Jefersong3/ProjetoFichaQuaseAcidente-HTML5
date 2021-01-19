@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>OPA - Online</title>
+		<!--Inserindo o Bootstrap4-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<!--Inserindo JQuery-->
+		<script type="text/javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+		<link rel="stylesheet" type="text/css" href="Styles/home.css">
+	</head>
+
+	<body class="cor">
+		<div class="container">
+			<!--Cabeçario da Pagina -->
+			<div class="row">
+				<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-7"><br>
+								<img src="imagen/Logo E.png" height="125" align="left"><br><br>
+								<a href="info.html"><img src="imagen/Botao I.png" height="40" align="center"></a>
+							</div>
+							<div class="col-sm-5"><br>
+								<img src="imagen/Logo E.png" height="60" width="" align="right">
+								<img src="imagen/Logo E.png" height="60" align="right">
+							</div>
+			</div>
+			<!--Fim do Cabeçario -->
+				<p align="center" id="cinza"><strong>Versão 1.2</strong> - <i>Jeferson Luiz da Silva</i></p>
+			<!-- Conteudo da Pagina -->
+			<div class="row" id="rowConteudo">
+				<div class="col-12">
+
+	<!--inicio do Formulario -->
+	<form method="post" action="processa.php">
+
+		<div class="campo">
+			<label for="data"><strong>Data</strong></label>
+			<input type="date" min="" name="data" id="data" required>
+		</div>
+
+		<div class="campo">
+			<label for="hora"><strong>Hora</strong></label>
+			<input type="time" name="hora" id="hora" required>
+		</div>
+
+		<div class="campo">
+			<label for="turno"><strong>Turno</strong></label>
+			<select id="turno" name="turno" required>
+				<option selected disabled value="">Selecione...</option>
+				<option>1º Turno</option>
+				<option>2º Turno</option>
+				<option>3º Turno</option>
+				<option>Adiministrativo</option>
+				<option>Outro</option>
+			</select>
+		</div>
+
+		<div class="campo">
+			<label for="nome"><strong>Nome</strong></label>
+			<input type="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" name="nome" id="nome" required>
+		</div>
+
+		<div class="campo">
+			<label for="gpid"><strong>GPID</strong></label>
+			<input type="text" size="8" maxlength="8" minlength="8" pattern="[0-9]+$" name="gpid" id="gpid">
+		</div>
+
+		<div class="campo">
+			<label for="setor"><strong>Setor</strong></label>
+			<select name="setor" id="setor" required>
+				<option selected disabled value="">Selecione...</option>
+				<option>Setor Ex1</option>
+				<option>Setor Ex2</option>
+				<option>Manutenção</option>
+				<option>Warehouse</option>
+				<option>ETE</option>
+				<option>Qualidade</option>
+				<option>Central de Resíduos</option>
+				<option>Adiministrativo</option>
+				<option>R&D</option>
+				<option>Pátio</option>
+				<option>Áreas Externas</option>
+				<option>Utilidades</option>
+				<option>Setor Ex3</option>
+				<option>Setor Ex4</option>
+				<option>Setor Ex5</option>
+				<option>Setor Ex6</option>
+				<option>Setor Ex7</option>
+				<option>Setor Ex7</option>
+				<option>Planta Piloto</option>
+			</select>
+		</div>
+
+		<div class="campo">
+			<label for="local"><strong>Local</strong></label>
+			<input type="text" name="local" id="local" required>
+		</div>
+
+		<br>
+
+		<fieldset class="grupo"><strong>Area:</strong></fieldset>
+			<div class="campo">
+				<label>
+					<input type="radio" name="area" value="manufatura" required="area">Manufatura
+				</label>
+
+				<label>
+					<input type="radio" name="area" value="vendas">Vendas
+				</label>
+
+				<label>
+					<input type="radio" name="area" value="frota">Frota
+				</label>
+
+				<label>
+					<input type="radio" name="area" value="armazem">Armazém (Warehouse)
+				</label>
+
+				<label>
+					<input type="radio" name="area" value="outros">Outros
+				</label>
+
+			</div>
+
+		<br>
+
+		<fieldset class="grupo"><strong>Tipo:</strong></fieldset>
+			<div class="campo">
+				<label>
+					<input type="radio" name="tipo" value="comportamento" required="tipo">Conportamento Inseguro
+				</label>
+
+				<label>
+					<input type="radio" name="tipo" value="condicao">Condição Insegura
+				</label>
+
+				<label>
+					<input type="radio" name="tipo" value="quase">Quase Acidente
+				</label>
+
+			</div>
+
+		<br>
+
+		<fieldset class="grupo"><strong>Quem Observou:</strong></fieldset>
+			<div class="campo">
+				<label>
+					<input type="radio" name="obs" value="empresa" required="obs">Empresa
+				</label>
+
+				<label>
+					<input type="radio" name="obs" value="cipa">CIPA
+				</label>
+
+				<label>
+					<input type="radio" name="obs" value="terceiro">Terceiro / Prestador de Serviço
+				</label>
+
+				<label>
+					<input type="radio" name="obs" value="ere">ERE
+				</label>
+
+			</div>
+
+		<br>
+
+			<fieldset class="grupo"><strong>Quem Praticou:</strong></fieldset>
+			<div class="campo">
+				<label>
+					<input type="radio" name="prat" value="empresa" required="prat">Empresa
+				</label>
+
+				<label>
+					<input type="radio" name="prat" value="visitante">Visitante
+				</label>
+
+				<label>
+					<input type="radio" name="prat" value="terceito">Terceiro / Prestador de Serviço
+				</label>
+
+			</div>
+
+		<br>
+
+		<!--Opação Ckeck-box para o Campo "Categoria" -->
+
+		<!--<fieldset class="grupo"><strong>Categoria (Uma ou mais opções):</strong></fieldset>
+			<div id="check">
+				<input type="checkbox" id="opçao1" name="categoria[]" value="fundamentos">
+				<label for="opçao1">Fundamentos Básicos&#160;</label>
+				<input type="checkbox" id="opçao2" name="categoria[]" value="maquinas">
+				<label for="opçao2">Máquinas&#160;</label>
+				<input type="checkbox" id="opçao3" name="categoria[]" value="eletrecidade">
+				<label for="opçao3">Eletrecidade&#160;</label>
+				<input type="checkbox" id="opçao4" name="categoria[]" value="veiculos">
+				<label for="opçao4">Veiculos&#160;</label>
+				<input type="checkbox" id="opçao5" name="categoria[]" value="quimicos">
+				<label for="opçao5">Manuseio de produtos químicos&#160;</label><br>
+				<input type="checkbox" id="opçao6" name="categoria[]" value="altura">
+				<label for="opçao6">Trabalho em Altura&#160;</label>
+				<input type="checkbox" id="opçao7" name="categoria[]" value="ferramentas">
+				<label for="opçao7">Ferramentas manuais&#160;</label>
+				<input type="checkbox" id="opçao8" name="categoria[]" value="pedestres">
+				<label for="opçao8">Pedestres&#160;</label>
+				<input type="checkbox" id="opçao9" name="categoria[]" value="carga">
+				<label for="opçao9">Manuseio de Carga&#160;</label><br>
+				<input type="checkbox" id="opçao10" name="categoria[]" value="manutencao">
+				<label for="opçao10">Manutenção do Local&#160;</label>
+				<input type="checkbox" id="opçao11" name="categoria[]" value="epi">
+				<label for="opçao11">EPI&#160;</label>
+				<input type="checkbox" id="opçao12" name="categoria[]" value="recon">
+				<label for="opçao12">Meio Ambiente / Recon&#160;</label>
+			</div>-->
+
+			<fieldset class="grupo"><strong>Categoria:</strong></fieldset>
+			<div class="campo">
+				<label>
+					<input type="radio" name="categoria" value="fundamentos" required="categoria">Fundamentos Básicos
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="máquinas">Máquinas
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="eletrecidade">Eletrecidade
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="veiculos">Veiculos
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="produtos_químicos">Manuseio de produtos químicos
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="t_altura">Trabalho em Altura
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="f_manuais
+				</label>">Ferramentas manuais
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="pedestres">Pedestres
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="m_carga">Manuseio de Carga
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="m_local">Manutenção do Local
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="epi">EPI
+				</label>
+
+				<label>
+					<input type="radio" name="categoria" value="recon">Meio Ambiente / Recon
+				</label>
+
+			</div>
+
+		<br>
+
+		<fieldset class="grupo"><strong>Priorização</strong></fieldset>
+			<div class="campo">
+				<label>
+					<input type="radio" name="priorizacao" value="baixo" required="priorizacao">Baixo
+				</label>
+
+				<label>
+					<input type="radio" name="priorizacao" value="medio">Médio
+				</label>
+
+				<label>
+					<input type="radio" name="priorizacao" value="alto">Alto
+				</label>
+			</div>
+
+		<br>
+
+		<fieldset class="grupo"><strong>Descrição:</strong></fieldset><br>
+			<div class="campo">
+				<textarea rows="4" style="width: 20em" id="descricao" name="descricao" required="descricao"></textarea>
+			</div>
+
+		<br>
+
+		<fieldset class="grupo"><strong>Observação / Ações tomadas:</strong></fieldset><br>
+			<div class="campo">
+				<textarea rows="4" style="width: 20em" id="observacao" name="observacao" required="observacao"></textarea>
+			</div>
+
+
+			<div class="campo">
+				<label for="resp">Resp. pela ação:</label>
+				<input type="text" name="resp" id="resp">
+			</div>
+
+			<div class="campo">
+				<label for="prazo">Prazo:</label>
+				<input type="text" name="prazo" id="prazo">
+			</div>
+
+			<button type="submit" class="botao">Enviar</button>
+
+			<br>
+
+	</form>
+	<!--Fim do Formulario -->
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
